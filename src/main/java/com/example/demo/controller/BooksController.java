@@ -38,7 +38,7 @@ public class BooksController {
     public  String editBook(Model model, @PathVariable Integer id){
         model.addAttribute("book", bookService.getBook(id));
 
-        return  "editbook";
+        return  "edit";
     }
     @PostMapping("/editbook")
     public  String submitedittedBook(Model model, @ModelAttribute Book book){

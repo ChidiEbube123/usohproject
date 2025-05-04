@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.List;
 @Entity
@@ -8,8 +9,12 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(unique = true)
+    @NotBlank(message = "Field is Required")
     private String name;
     private  String author;
+    @Column(unique = true)
+    @NotBlank(message = "Field is Required")
     private  String description;
 
     @ManyToOne
