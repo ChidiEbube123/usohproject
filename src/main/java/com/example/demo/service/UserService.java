@@ -40,4 +40,7 @@ public class UserService {
         Pageable pageable = PageRequest.of(page, size);
         return userRepo.findAll(pageable);
     }
+    public Page<User> getUsers(Pageable pageable) {
+        return userRepository.findAll(pageable);
+    }
 }
