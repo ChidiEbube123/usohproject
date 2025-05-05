@@ -50,6 +50,11 @@ public class BooksController {
         bookService.deleteBook(id);
         return  "redirect:/book/readall";
     }
+    @GetMapping
+    public ResponseEntity<Page<User>> getAllUsers(Pageable pageable) {
+        Page<User> users = userService.getUsers(pageable);
+        return ResponseEntity.ok(users);
+    }
 }
 
 
